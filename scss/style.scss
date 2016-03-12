@@ -1,0 +1,12 @@
+$colored: red;
+
+.heading{
+  color: $colored;
+}
+.content{
+  text-align: center;
+}
+.other-content{
+  background-color: $colored;
+  color: white;
+}
