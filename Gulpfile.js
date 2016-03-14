@@ -16,11 +16,11 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(distfolder+'/css'));
 });
 gulp.task('watch', function() {
-  return gulp
-    .watch(appfolder+'/scss/*.scss', ['sass'])
-    .on('change', function(event) {
-      console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-    });
+  gulp.watch(appfolder+'/scss/*.scss', ['sass']);
+  gulp.watch(appfolder+'/*.+(htm|html)', ['htmldist']);
+  gulp.watch(appfolder+'/js/*.js', ['jsdist']);
+  gulp.watch(appfolder+'/css/*.css', ['cssdist']);
+  gulp.watch(appfolder+'/img/*.+(png|jpg|jpeg|gif|svg|bmp)', ['imgdist']);
 });
 gulp.task('htmldist',function() {
   console.log("Copiando html a dist");
