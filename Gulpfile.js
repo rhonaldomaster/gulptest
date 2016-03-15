@@ -7,6 +7,9 @@ var sassOptions = {
   errLogToConsole: true,
   outputStyle: 'expanded'
 };
+var mainBowerFiles = require('main-bower-files');
+var filter = require('gulp-filter');
+var concat = require('gulp-concat');
 
 gulp.task('sass', function () {
   console.log("Generando css desde scss");
@@ -48,5 +51,12 @@ gulp.task('imgdist',function() {
 });
 gulp.task('clean:dist', function() {
   return del.sync(distfolder);
+});
+gulp.task('jsf', function() {
+  var jsFiles = [appfolder+'/js/*'];
+  return gulp.src(mainBowerFiles())
+		/*.pipe(filter(['*.js']))*/
+		.pipe(concat('app.js'))
+		.pipe(gulp.dest(distfolder+'/js'));
 });
 gulp.task('default',['sass','htmldist','cssdist','jsdist','imgdist']);

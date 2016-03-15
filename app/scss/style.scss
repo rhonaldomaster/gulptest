@@ -1,6 +1,9 @@
 $colored: red;
-$padding: 4px;
-
+$padding: 8px;
+*{
+  font-family: Helvetica,sans-serif;
+  font-size: 1rem;
+}
 .heading{
   color: $colored;
   text-align: center;

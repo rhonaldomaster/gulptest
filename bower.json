@@ -1,0 +1,22 @@
+{
+  "name": "gulptest",
+  "description": "testing gulp",
+  "main": "app.js",
+  "authors": [
+    "rhonaldomaster <rhonaldomaster@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/rhonaldomaster/gulptest",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "handlebars": "^4.0.5"
+  }
+}
